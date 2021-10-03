@@ -17,8 +17,7 @@ exports.getList = (req, res) => {
 
 exports.getContent = (req, res) => {
     const { articleName } = req.params;
-    let filePath = searchFile(articlePath, articleName)
-    console.log(req.params)
+    let filePath = searchFile(articlePath, articleName);
     let content = readFile(filePath);
     res.render('succ', {
         data: JSON.stringify({

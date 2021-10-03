@@ -1,4 +1,4 @@
-# vuepress 博客管理前端
+# vuepress 博客管理后端
 
 ## 介绍
 
@@ -18,20 +18,6 @@
 
 -   [ ] 评论管理
 -   [ ] 安全问题
-
-## 界面
-
-### 登录
-
-![image](./shot/login.png)
-
-### 首页
-
-![image](./shot/dashboard.png)
-
-### markdown 编辑器
-
-![image](./shot/markdown.png)
 
 ## 使用
 

@@ -37,7 +37,6 @@ exports.save = (req, res) => {
     writeFile(filePath, content);
     if (title !== articleName) {
         const newPath = filePath.replace(`${articleName}${articleFormat}`, `${title}${articleFormat}`);
-        console.log(filePath, newPath);
         rename(filePath, newPath);
     }
     execSCript(scripts.build);
@@ -50,7 +49,7 @@ exports.uploadImg = (req, res) => {
     let form = new multiparty.Form();
     form.parse(req, function (err, fields, data) {
         let file = data.uploadImage[0];
-        let { articleName } = data;
+        let { articleName } = req.params;
         let filePath = searchFile(articlePath, articleName);
         if (!filePath.length) {
             filePath = newFilePath(articleName);

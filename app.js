@@ -1,11 +1,3 @@
-/*
- * @Description: 
- * @Author: AmsChen
- * @Date: 2021-04-04 10:53:33
- * @LastEditors: AmsChen
- * @LastEditTime: 2021-04-04 16:20:28
- * @FilePath: \hexo后台管理系统\Backend\app.js
- */
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

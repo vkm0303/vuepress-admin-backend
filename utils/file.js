@@ -17,12 +17,14 @@ exports.readFile = (targetPath) => {
 }
 
 exports.newFilePath = (fileName) => {
-    const dateObj = new Date()
-    const date = dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + dateObj.getDate();
+    const dateObj = new Date();
+    let day = dateObj.getDate();
+    day = day < 10 ? '0' + day : day;
+    const date = dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + day;
     try {
         fs.mkdirSync(`${articlePath}/${date}`);
     } catch (error) {
-        // console.log(error);
+
     }
     const filePath = `${articlePath}/${date}/${fileName}${articleFormat}`;
     return filePath;
@@ -73,12 +75,11 @@ exports.getTargetDirFiles = (targetDirPath, targetFileFormat) => {
             }
             if (stats.isFile() && path.extname(fPath) === targetFileFormat) {
                 targetFiles.push(fPath.split(path.sep).pop().replace(`${articleFormat}`, ''));
-                // console.log(targetFiles)
             }
         });
     }
     finder(targetDirPath);
-    return targetFiles;
+    return targetFiles.reverse();
 }
 
 exports.searchFile = (targetDirPath, targetFileName) => {

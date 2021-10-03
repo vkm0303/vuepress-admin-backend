@@ -51,14 +51,12 @@ exports.saveFile = (sourcePath, targetPath, fileName) => {
     }
     writeStream = fs.createWriteStream(targetPath + fileName);
 
-
     // 读写进程开始
     readStream.pipe(writeStream);
 
     // 监听读取完成事件
     readStream.on('end', () => {
         // 读取完成后，释放读取源文件链接
-        // console.log(targetPath)
         fs.unlinkSync(sourcePath);
     });
 }
@@ -94,7 +92,6 @@ exports.searchFile = (targetDirPath, targetFileName) => {
             }
             if (stats.isFile() && fPath.indexOf(targetFileName) !== -1) {
                 targetFilePath = fPath;
-                console.log("f:" + fPath)
                 return filePath;
             }
         }

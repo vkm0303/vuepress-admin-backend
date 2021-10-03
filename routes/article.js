@@ -2,7 +2,6 @@
 var express = require('express');
 var router = express.Router();
 
-const { auth } = require('../middlewares/auth');
 const { getList, getContent, save, uploadImg } = require('../controllers/article');
 
 router.get('/list', getList);

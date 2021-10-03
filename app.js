@@ -1,9 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cookieSession = require('cookie-session');
 var cors = require('cors');
 
 const { imagePath } = require('./config');
@@ -11,6 +8,7 @@ const { imagePath } = require('./config');
 // 设置端口号
 var ServerConf = require("./ServerConf");
 
+// 导入路由
 var usersRouter = require('./routes/user');
 var postsRouter = require('./routes/article');
 
@@ -20,26 +18,19 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(imagePath));
 
 //使用cors工具，后端代理，解决跨域
 app.use(cors());
 
-//设置cookie-session
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}));
 
 app.use('/api/user', usersRouter);
 app.use('/api/article', postsRouter);
 
 process.env.PORT = ServerConf.ServicePort;
-var port = process.env.PORT || 3000;
+var port = 3100;
 app.listen(port);
 console.log('port:', port);
 

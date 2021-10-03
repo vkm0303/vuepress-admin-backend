@@ -1,0 +1,13 @@
+{
+    "projectPath": "D:/projects/blog",
+    "articlePath": "D:/projects/blog/docs/articles",
+    "imagePath": "D:/projects/blog/docs/articles",
+    "articleFormat": ".md",
+    "scripts": {
+        "build": "cd /projects/blog & yarn docs:build"
+    },
+    "admin": {
+        "username": "admin",
+        "password": "admin"
+    }
+}

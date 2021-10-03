@@ -51,6 +51,14 @@ npm i
 
 前端仓库：[vuepress-admin-backend](https://github.com/vkm0303/vuepress-admin-frontend.git)
 
+#### app.js
+
+```javascript
+//配置端口
+var port = 3100;
+app.listen(port);
+```
+
 #### config.json
 
 ```

@@ -1,5 +1,7 @@
 # vuepress 博客管理后端
 
+前端仓库：[vuepress-admin-backend](https://github.com/vkm0303/vuepress-admin-frontend.git)
+
 ## 介绍
 
 ### 前言
@@ -34,8 +36,6 @@ npm i
 ```
 
 ### 配置
-
-前端仓库：[vuepress-admin-backend](https://github.com/vkm0303/vuepress-admin-frontend.git)
 
 #### app.js
 

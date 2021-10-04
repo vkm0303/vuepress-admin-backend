@@ -1,6 +1,6 @@
 # vuepress 博客管理后端
 
-前端仓库：[vuepress-admin-backend](https://github.com/vkm0303/vuepress-admin-frontend.git)
+前端仓库：[vuepress-admin-frontend](https://github.com/vkm0303/vuepress-admin-frontend.git)
 
 ## 介绍
 
